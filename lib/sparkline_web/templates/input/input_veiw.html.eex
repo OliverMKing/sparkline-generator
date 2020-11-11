@@ -1,0 +1,4 @@
+<section class="phx-hero">
+  <h1>This is the type of data you just sent: <%= @content_type %></h1>
+
+</section>
