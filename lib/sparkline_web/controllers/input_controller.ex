@@ -7,9 +7,8 @@ defmodule SparklineWeb.InputController do
 
   def post(conn, %{"changeset" => changeset}) do
     %{"in_file" => in_file} = changeset
-    IO.puts("Content type: " <> in_file.content_type)
-    type = in_file.content_type
-    render(conn, "input_veiw.html", [changeset: :changeset, action: "", content_type: type])
+    path = Path.expand(in_file.path)
+    render(conn, "input_veiw.html", [changeset: :changeset, action: "", file_path: path])
   end
 
 end
