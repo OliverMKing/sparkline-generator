@@ -11,12 +11,15 @@ defmodule SparklineWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
   end
 
   scope "/", SparklineWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/input", InputController, :index
+    post "/input", InputController, :post
   end
 
   # Other scopes may use custom stacks.

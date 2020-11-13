@@ -1,0 +1,6 @@
+<section class="phx-hero">
+  <p>
+    The contents of the file: <br>
+    <%= csv(@file_path) %>
+  </p>
+</section>
