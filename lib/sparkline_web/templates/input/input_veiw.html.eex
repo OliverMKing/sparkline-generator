@@ -1,6 +1,40 @@
 <section class="phx-hero">
-  <p>
-    The contents of the file: <br>
-    <%= csv(@file_path) %>
-  </p>
+  <div>
+    <canvas id="sparkline" points="<%= inspect @points%>" width="<%= @width %>" height="<%= @height %>">
+    </canvas>
+  </div>
+
+  <a href="" id="download" download="sparkline.png">Download as PNG</a>
 </section>
+
+<script>
+  // Gets points
+  var points = JSON.parse(document.getElementById("sparkline").getAttribute("points"));
+
+  // Sets up canvas for drawing
+  var canvas = document.getElementById("sparkline");
+  var ctx = canvas.getContext("2d");
+
+  // Optional draw white background
+  // ctx.fillStyle = "white";
+  // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Draw sparkline
+  ctx.moveTo(points[0][0], points[0][1]);
+  ctx.fillStyle = "black";
+  ctx.lineWidth = .5;
+  for (let point of points) {
+    let x = point[0];
+    let y = point[1];
+    ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Lets user download image
+  var download = document.getElementById('download');
+  download.onclick = function() {
+    var imageUrl = canvas.toDataURL('image/png');
+    this.href = imageUrl;
+  }
+
+</script>
