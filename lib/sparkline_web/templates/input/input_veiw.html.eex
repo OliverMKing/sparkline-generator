@@ -1,6 +1,6 @@
 <section class="phx-hero">
   <div>
-    <canvas id="sparkline" points="<%= inspect @points%>" width="<%= @width %>" height="<%= @height %>">
+    <canvas id="sparkline" width="<%= @width %>" height="<%= @height %>">
     </canvas>
   </div>
 
@@ -9,7 +9,7 @@
 
 <script>
   // Gets points
-  var points = JSON.parse(document.getElementById("sparkline").getAttribute("points"));
+  var points = <%= Poison.encode!(@points) %>
 
   // Sets up canvas for drawing
   var canvas = document.getElementById("sparkline");
