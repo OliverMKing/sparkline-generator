@@ -1,5 +1,6 @@
 <section class="phx-hero">
-  <h1>Input your data here!</h1>
+  <h1>Input your data here</h1>
+  <p>Choose a text file that contains only numbers seperated by a ,</p>
 
   <%= form_for @changeset, @action, [multipart: true], fn f -> %>
   <div class="form-group">

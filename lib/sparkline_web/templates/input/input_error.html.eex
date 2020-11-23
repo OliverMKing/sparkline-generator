@@ -1,0 +1,7 @@
+<section class="phx-hero">
+  <h1>Input your data here</h1>
+  <p>Your chosen text file was not in the correct format.</p>
+  <p>Be sure to choose a text file that contains only numbers seperated by a ,</p>
+  <a href="/input">Try again?</a>
+
+</section>
