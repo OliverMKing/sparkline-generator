@@ -7,7 +7,7 @@ defmodule SparklineWeb.InputController do
 
   @spec post(Plug.Conn.t(), map) :: Plug.Conn.t()
   def post(conn, %{"changeset" => changeset}) do
-    %{"in_file" => in_file} = changeset
+    %{"in_file" => in_file, "in_width" => widthStr, "in_height" => heightStr} = changeset
     path = Path.expand(in_file.path)
 
     try do
@@ -31,8 +31,8 @@ defmodule SparklineWeb.InputController do
               end)
 
             # Calculates image details
-            height = 23
-            width = 189
+            width = elem(Integer.parse(widthStr), 0)
+            height = elem(Integer.parse(heightStr), 0)
             step = width / (length(nums) - 1)
             reversedNums = Enum.map(nums, fn x -> -x end)
 

@@ -4,7 +4,19 @@
 
   <%= form_for @changeset, @action, [multipart: true], fn f -> %>
   <div class="form-group">
-    <%= file_input f, :in_file, class: "form-control", id: "file" %>
+    <label>
+      Text file:
+      <br >
+      <%= file_input f, :in_file, class: "form-control", id: "file" %>
+    </label>
+    <label>
+      Width:
+      <%= number_input f, :in_width, class: "form-control", id: "width", value: 189, min: 1 %>
+    </label>
+    <label>
+      Height:
+      <%= number_input f, :in_height, class: "form-control", id: "height", value: 23, min: 1 %>
+    </label>
   </div>
 
   <div class="form-group">
