@@ -1,14 +1,18 @@
 <section class="phx-hero">
-  <h1>Welcome to the Sparkline Generator</h1>
-  <p>Create Sparklines from just numbers</p>
+  <h1>Welcome to the Sparkline Generator!</h1>
+  <p>Create Sparkline graphs from just numbers</p>
 </section>
 
 <section class="row">
   <article class="column">
-    <h2>Get Started</h2>
+  <h3>-What is a Sparkline?</h3>
+  <h5>A Sparkline is a line graph that is created from a list of numbers.
+    Some examples include an EKG chart of heart readings or the change in value of specific stocks through time.</h5>
+    <h2>-To Get Started:</h2>
+    <p>Follow the link below to create a new sparkline using a text file (txt).</p>
     <ul>
       <li>
-        <a href="/input">Create Sparkline</a>
+        <a href="/input">Create New Sparkline</a>
       </li>
     </ul>
   </article>

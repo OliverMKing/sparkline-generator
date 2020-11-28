@@ -1,6 +1,8 @@
 <section class="phx-hero">
   <h1>Input your data here</h1>
-  <p>Choose a text file that contains only numbers seperated by a ,</p>
+  <hr>
+  <p>Please select a text file (txt) containing only numbers <br> separated by a comma and space. Ex: 
+      1, 2, 3, 4</p>
 
   <%= form_for @changeset, @action, [multipart: true], fn f -> %>
   <div class="form-group">
@@ -9,15 +11,19 @@
       <br >
       <%= file_input f, :in_file, class: "form-control", id: "file" %>
     </label>
+    <hr>
+    <p>Please input desired Sparkline Graph Dimensions</p>
     <label>
-      Width:
+      Width in Pixels (deafult 189):
       <%= number_input f, :in_width, class: "form-control", id: "width", value: 189, min: 1 %>
     </label>
     <label>
-      Height:
+      Height in Pixels (default 23):
       <%= number_input f, :in_height, class: "form-control", id: "height", value: 23, min: 1 %>
     </label>
   </div>
+
+  <hr>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary", id: "submit" %>

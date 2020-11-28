@@ -4,7 +4,7 @@
     </canvas>
   </div>
 
-  <a href="" id="download" download="sparkline.png">Download as PNG</a>
+  <a href="" id="download" download="sparkline.png">Download your Sparkline Graph as a PNG image</a>
 </section>
 
 <script>
